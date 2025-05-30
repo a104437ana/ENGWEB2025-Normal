@@ -57,7 +57,7 @@ As queries em MongoDB já se encontram no ficheiro [queries.txt](ex1/queries.txt
 ```js
    db.edicoes.aggregate([
   { $unwind: "$musicas" },
-  { $group: { _id: "$musicas.interprete" } },
+  { $group: { _id: "$musicas.intérprete" } },
   { $sort: { _id: 1 } }
 ])
 ```

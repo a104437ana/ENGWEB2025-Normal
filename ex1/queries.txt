@@ -7,7 +7,7 @@
 // 3. Qual a lista de intérpretes (ordenada alfabeticamente e sem repetições)?
    db.edicoes.aggregate([
   { $unwind: "$musicas" },
-  { $group: { _id: "$musicas.interprete" } },
+  { $group: { _id: "$musicas.intérprete" } },
   { $sort: { _id: 1 } }
 ])
 
