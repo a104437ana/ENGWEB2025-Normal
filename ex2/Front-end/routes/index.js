@@ -63,14 +63,14 @@ router.get('/paises/:pais', function(req, res, next) {
         pais,
         organizou,
         participou,
-        date: new Date()
+        date: now()
       });
     })
     .catch(error => {
       console.error(error);
       res.status(500).render('error', {
         title: 'Erro',
-        date: new Date(),
+        date: now(),
         error
       });
     });
