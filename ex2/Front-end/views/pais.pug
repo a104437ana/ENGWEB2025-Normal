@@ -1,0 +1,45 @@
+extends layout
+
+block content
+    .w3-container
+        h1 Nome do país: #{pais}
+        
+        h2 
+            b Edições em que participou
+        if participou.length === 0
+            p Nenhuma participação encontrada.
+        else
+            table.w3-table-all
+                thead
+                tr.w3-light-blue.w3-text-black
+                    th Id da edição
+                    th Ano
+                    th Nome da música
+                    th Nome do intérprete
+                    th Venceu?
+                tbody
+                each ed in participou
+                    tr
+                    td
+                        a(href='/' + ed.id)= ed.id
+                    td= ed.ano
+                    td= ed.titulo
+                    td= ed.interprete
+                    td= ed.venceu ? 'Sim' : 'Não'
+
+        h2 
+            b Edições que organizou
+        if organizou.length === 0
+            p Nenhuma organização encontrada.
+        else
+            table.w3-table-all
+                thead
+                tr.w3-light-blue.w3-text-black
+                    th Id da edição
+                    th Ano
+                tbody
+                each ed in organizou
+                    tr
+                    td
+                        a(href='/' + ed.id)= ed.id
+                    td= ed.ano

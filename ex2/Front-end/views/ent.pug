@@ -1,0 +1,36 @@
+extends layout 
+
+block content
+    .w3-container
+        p
+        ul.w3-ul.w3-card-4
+            li
+                b Id da Edição: 
+                = livro._id
+            li
+                b Ano da Edição: 
+                = livro.anoEdição
+            li
+                b País Organizador: 
+                = livro.organizacao
+            li
+                b País Vencedor: 
+                if livro.vencedor
+                    = livro.vencedor
+                else 
+                    | -
+        p
+        table.w3-table-all
+            tr.w3-light-blue.w3-text-black
+                th Id da música
+                th Nome da música
+                th Nome do intérprete
+                th País que representa
+            each m in livro.musicas
+                tr
+                    td= m.id
+                    td= m.título
+                    td= m.intérprete
+                    td
+                        a.w3-hover-text-pink(href='/paises/' + m.país) #{m.país}
+        p

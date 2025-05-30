@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+  body.w3-card-4(style="min-height: 100vh; display: flex; flex-direction: column;")
+    header.w3-bar.w3-cyan.w3-text-black.w3-bottombar.w3-border-cyan
+      nav
+        h1
+          span.w3-bar-item.w3-left= title
+          if title != "Eurovisão - Todas as Edições"
+            a.w3-bar-item.w3-right.w3-hover-text-white(href='/') Voltar
+    main(style="flex-grow: 1;")
+      block content
+    footer.w3-container.w3-black
+      address.w3-bar.w3-center
+        span.w3-bar-item © Resolução do teste de 
+          a(href="https://epl.di.uminho.pt/~jcr/AULAS/EngWeb2025/") Engenharia Web
+          span  do ano 2025 por   
+          a(href="https://github.com/a104437ana") Ana Sá Oliveira
+          span  (A104437)
+        span.w3-bar-item Gerado em 
+          span=date
+        span.w3-bar-item Interface com  
+          a(href="https://www.w3schools.com/w3css/default.asp") w3.css
