@@ -1,3 +1,7 @@
+O ficheiro queries.txt está na pasta ex1.
+O dataset que importei para o Mongo está na pasta ex1 e chama-se dataset_corrigido.json.
+O dataset original é o dataset.json na pasta ex1 (não importei este dataset para o Mongo).
+
 # Persistência de dados
 Eu implementei a persistência de dados no **MongoDB**, armazenando um array de objetos JSON. Cada objeto representa uma edição da Eurovisão.
 
@@ -6,17 +10,14 @@ Eu implementei a persistência de dados no **MongoDB**, armazenando um array de 
 Primeiro analisei o dataset e percebi que:
 1. O campo do Ano de Edição era uma String.
 2. As edições tinham o campo id em vez do campo _id.
-3. 
+3. Tinhamos um dicionários de edições da eurovisão.
 
 Em segundo lugar, alterei o dataset:
 1. Mudei o campo Ano de Edição para um Inteiro.
-2. Decidi que o `bookId` seria o identificador dos livros e por isso, alterei este campo
-para `_id`, porque no MongoDB os identificadores teem este nome normalmente;
-1. 
+2. O campo id passou a ser _id porque no MongoDB os identificadores teem este nome normalmente;
+3. Passamos a ter um array de ediçõs da eurovisão.
 
-
-
-Para cumprir os pontos 2 e 3 executei o programa [dataset.py](ex1/dataset.py):
+Para alterar o dataset executei o programa [dataset.py](ex1/dataset.py) na pasta ex1:
 ```
 python3 dataset.py
 ```
@@ -38,7 +39,7 @@ sudo docker exec -it mongoEW sh
 ```
 Importar o [dataset_corrigido.json](ex1/dataset_corrigido.json) para o MongoDB:
 ```
-mongoimport -d livros -c livros /tmp/dataset_corrigido.json --jsonArray
+mongoimport -d eurovisao -c edicoes /tmp/dataset_corrigido.json --jsonArray
 ```
 # Respostas textuais pedidas
 
